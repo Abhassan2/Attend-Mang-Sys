@@ -84,10 +84,10 @@ a.active{
   padding-top: 0.25rem;     
   padding-bottom: 0.25rem;
   gap: 0.5rem;                    
-  font-weight: 600;       
+  font-weight: 600;      
 }
 
-.attend-insights-nav .nav {
+.attend-insights-nav .btn {
     padding-inline: 0.5rem;
     border-radius: 1rem;
 }
