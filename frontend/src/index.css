@@ -78,16 +78,13 @@ a.active{
 /* attendIinsightsNav css */
 .attend-insights-nav {
   display: flex;             
-  background-color: #ddd;   
   width: fit-content;       
   padding-left: 0.5rem;   
   padding-right: 0.5rem;
   padding-top: 0.25rem;     
   padding-bottom: 0.25rem;
-  gap: 0.5rem;              
-  border-radius: 1rem;      
-  font-weight: 600;  
-  border: 2px solid black;      
+  gap: 0.5rem;                    
+  font-weight: 600;       
 }
 
 .attend-insights-nav .nav {
