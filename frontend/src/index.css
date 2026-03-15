@@ -6,11 +6,17 @@
 
 .primary-text {
     color: #28283C;
+    font-weight: 600;
 }
 
 .secondary-text {
     color: #333333;
     font-weight: 400;
+}
+
+.tertiary-font {
+    font-size: 14px;
+    color: #555;
 }
 
 .active-text {
@@ -21,10 +27,10 @@
     color: #FFFFFF;
 }
 
-/* a.active{
-    background-color: rgb(3, 181, 251);
-    color: #333333;
-} */
+.green {
+    color: #1F9D86;
+}
+
 
 /* For All Pages */
 .container {
@@ -35,7 +41,83 @@
     background-color: #F5F5F5;
 }
 
+/* overview-container css */
+
+.overview-container {
+    min-height: 5rem;
+    padding: 0.5rem 1rem;
+    background-color: #FAFAFA;
+    border-radius: 1rem;
+    position: relative;
+    border: 2px solid black;
+}
+
+.overview-container h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.overview-container h1 {
+    font-size: 24px;
+}
+
+.overview-container #overallProgress {
+    width: 75%;
+    height: 0.5rem;
+    overflow: hidden;
+}
+
+.overview-container #overallProgress::-webkit-progress-bar {
+    background-color: orange;
+    border-radius: 1.5rem;
+}
+
+#overallProgress::-webkit-progress-value {
+    background-color: #1F9D86;
+    border-radius: 1.5rem;
+}
+
+.overview-container div {
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    top: 0.8rem;
+    right: 0.5rem;
+    margin-left: 0.25rem;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: linear-gradient(135deg, #5A8CFF, #7A5CFF);
+    box-shadow: inset 0 0px 12px #fff;
+    border-radius: 161px 133px 161px 133px;
+}
+
+/* .overview-container div::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.5rem;
+    background: #FFC83D;
+    height: 1.5rem;
+    width: 1.5rem;
+    box-shadow: inset 0 -4px 8px rgba(255, 255, 255, 0.6);
+    clip-path: polygon(
+        50% 0%, 
+        61% 35%, 
+        98% 35%, 
+        68% 57%, 
+        79% 91%, 
+        50% 70%, 
+        21% 91%, 
+        32% 57%, 
+        2% 35%, 
+        39% 35%
+    );
+} */
+
 /* Attendence page css */
+
 .attend-header {
     margin-bottom: 12px;
     position: relative;
