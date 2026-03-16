@@ -46,10 +46,12 @@
 .overview-container {
     min-height: 5rem;
     padding: 0.5rem 1rem;
-    background-color: #FAFAFA;
+    background-color: #EAEFEF;
     border-radius: 1rem;
     position: relative;
-    border: 2px solid black;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    border: 2px solid rgba(234, 239, 239, 1);
 }
 
 .overview-container h2 {

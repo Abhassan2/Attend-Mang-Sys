@@ -7,8 +7,8 @@ function App(){
 
   return(
     // <TimeTable/>
-    // <Attendance />
-    <Courses />
+    <Attendance />
+    // <Courses />
   )
 }
 
