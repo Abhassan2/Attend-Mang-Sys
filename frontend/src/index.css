@@ -229,7 +229,8 @@
 
 /* VerticallBar Css */
 .vBar-container {
-    justify-content: flex-end;   
+    margin-top: 1rem;
+    justify-content: flex-start;   
 }
 
 .vBar-container canvas {
