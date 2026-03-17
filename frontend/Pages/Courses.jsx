@@ -6,6 +6,11 @@ export default function Courses() {
       <AttendanceOverview overview={{msg: "hello", totalPercent: 82}} />
       <div className="card-container subContainer">
         <h1>My Courses</h1>
+        <div>
+          <div className="card">
+            <img src="src\assets\card1.jpeg" alt="card-img" />
+          </div>
+        </div>
       </div>
     </div>
   )
