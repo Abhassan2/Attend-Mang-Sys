@@ -1,7 +1,7 @@
 export default function AttendanceOverview({ overview }) {
   return (
       <div className="overview-container">
-        <h2>Attendance Overview {overview.msg}</h2>
+        <h2>{overview.msg}</h2>
         <h1 className="green">
           <strong> {overview.totalPercent}%</strong> Present
         </h1>

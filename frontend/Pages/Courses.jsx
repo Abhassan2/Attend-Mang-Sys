@@ -3,13 +3,23 @@ import AttendanceOverview from "../src/Components/AttendanceOverview"
 export default function Courses() {
   return (
     <div className="container">
-      <AttendanceOverview overview={{msg: "hello", totalPercent: 82}} />
+      <AttendanceOverview overview={{msg: "Attendance Overview", totalPercent: 82}} />
       <div className="card-container subContainer">
-        <h1>My Courses</h1>
+        <h1 className="primary-text">My Courses</h1>
         <div>
           <div className="card">
-            <img src="src\assets\card1.jpeg" alt="card-img" />
+            <div>
+              <div>ACA</div>
+              <div>
+                <h1 className="primary-text">Advanced Computer Architecture</h1>
+              </div>
+            </div>
+            <div>
+              <h2 className="secondary-text"><strong>Syllabus Topics</strong></h2>
+              <p>content</p>
+            </div>
           </div>
+          
         </div>
       </div>
     </div>
