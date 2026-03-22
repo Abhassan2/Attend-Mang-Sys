@@ -4,9 +4,10 @@ const AttendEaseContext = createContext();
 
 const AttendEaseContextProvider = ({children})=>{
     const [day, setDay] = useState(new Date().toLocaleString("en-US", {weekday: "short"}));
+    const [openSidebar, setOpenSidebar] = useState(false)
 
     const object = {
-        setDay, day
+        setDay, day, openSidebar, setOpenSidebar,
     }
 
     return (
