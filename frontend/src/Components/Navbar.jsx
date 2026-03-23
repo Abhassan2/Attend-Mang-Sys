@@ -10,7 +10,6 @@ export default function MainHeader() {
   const handleSidebar = ()=>{
     object.setOpenSidebar(!object.openSidebar)
   }
-  console.log(object.openSidebar);
   
   return (
       <div className="navbar">

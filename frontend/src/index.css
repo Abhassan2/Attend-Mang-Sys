@@ -289,6 +289,7 @@
     height: calc(100% - 5rem);
     width: 100%;
     overflow-y: auto;
+    position: relative;
 }
 
 .card-container>h1 {
@@ -307,7 +308,8 @@
     gap: 0.35rem;
 }
 
-.card-container .card {
+/* Card css */
+.card {
     height: 20%;
     width: 100%;
     display: flex;
@@ -319,16 +321,16 @@
     box-shadow: 4px 4px 2px rgba(0,0,0,0.1);
 }
 
-.card-container .card>div:first-child {
+.card>div:first-child {
     display: flex;
     padding: 0.5rem;
     gap: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(0,0,0,0.1);
 
 }
 
-.card-container .card>div:first-child>div:first-child {
+.card>div:first-child>div:first-child {
     min-width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
@@ -341,16 +343,26 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card-container .card>div:last-child {
+.card .dropDown {
+    position: relative;
     padding: 0.25rem 0;
+    cursor: pointer;
 }
 
-.card-container .card>div:last-child h2 {
-    border-bottom: 2px solid rgba(0,0,0,0.1);
+.card .dropDown h2 {
     padding-bottom: 0.25rem;
     padding-inline: 0.5rem;
+    font-size: 12px;
 }
 
-.card-container .card>div:last-child p {
+.card .dropDown p {
+    border-top: 2px solid rgba(0,0,0,0.1);
     padding-inline: 0.5rem;
+}
+
+.card .dropDown .arrowDown-icon {
+    position: absolute;
+    top: 0;
+    right: 0.25rem;
+    color: #28283C;
 }
