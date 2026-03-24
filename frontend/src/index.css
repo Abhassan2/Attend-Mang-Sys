@@ -13,6 +13,7 @@
 .secondary-text {
     color: #28283C;
     font-weight: 400;
+    font-size: 15px;
 }
 
 .tertiary-font {
@@ -32,6 +33,12 @@
     color: #1F9D86;
 }
 
+.icon {
+    font-size: 2.35rem !important;
+    color: #000;
+    margin: 0 1rem 0 0;
+}
+
 /* For All Pages */
 .container {
     display: flex;
@@ -48,6 +55,14 @@
     border-radius: 1rem;
 }
 
+.ui-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0 0.5rem;
+}
+
 /* Main-header css */
 
 .navbar {
@@ -58,9 +73,6 @@
     align-items: center;
     padding: 0 0.5rem;
     color: #fff;
-    /* position: sticky;
-    top: 0;
-    left: 0; */
 }
 
 .navbar .menu-icon {
@@ -104,6 +116,29 @@
     transform: translateX(10px);
 }
 
+/* home css */
+
+.home-main>div:last-child {
+    border-radius: 1rem;
+    background-color: white;
+    border: 2px solid rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.home-main>div:last-child>h1 {
+    padding: 0.5rem;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.home-main>div:last-child>div:last-child {
+    padding: 0 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.home-main>div:last-child>div:last-child>.card {
+    margin-bottom: 0.5rem;
+}
+
 /* overview-container css */
 
 .overview-container {
@@ -113,7 +148,7 @@
     border-radius: 1rem;
     position: relative;
     box-shadow: 0 3px 4px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     border: 2px solid rgba(234, 239, 239, 1);
 }
 
@@ -143,27 +178,24 @@
 }
 
 .overview-container div {
-    height: 3rem;
-    width: 9rem;
+    height: 3.25rem;
+    width: 6rem;
     position: absolute;
-    top: 0.8rem;
-    right: 2rem;
+    top: 2.4rem;
+    right: 0.5rem;
     margin-left: 0.25rem;
     color: black;
     font-weight: 600;
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.15rem;
     background: transparent;
-    background: linear-gradient(135deg, #5A8CFF, #7A5CFF);
-    box-shadow: 8px 8px  rgba(60, 75, 240, 0.763);
-    /* border: 1px solid black; */
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
     border-radius: 0.5rem;
+    transform: rotate(30deg);
 }
 
 /* Attendence page css */
-
 .attend-header {
     margin-bottom: 12px;
     position: relative;
@@ -284,7 +316,7 @@
 
 /* Course css */
 /* card container */
-.card-container {
+.myCourses-container {
     background-color: #EAEFEF;
     height: calc(100% - 5rem);
     width: 100%;
@@ -292,7 +324,7 @@
     position: relative;
 }
 
-.card-container>h1 {
+.myCourses-container>h1 {
     position: sticky;
     top: 0;
     padding: 0.5rem;
@@ -301,7 +333,7 @@
     z-index: 100;
 }
 
-.card-container>div {
+.myCourses-container>div {
     margin: 0.5rem ;
     display: flex;
     flex-direction: column;
@@ -365,4 +397,30 @@
     top: 0;
     right: 0.25rem;
     color: #28283C;
+}
+
+/* CoursesOverviewUi css */
+.CoursesOverviewUi {
+    background: linear-gradient(90deg,rgba(2, 0, 36, 0.93) 0%, 
+    rgba(9, 9, 121, 0.93) 35%, rgba(0, 217, 255, 0.83) 100%);
+}
+
+.CoursesOverviewUi div, .calculatorUi div {
+    display: flex;
+}
+
+.CoursesOverviewUi div>div {
+    display: flex;
+    flex-direction: column;
+}
+
+.CoursesOverviewUi>p, .calculatorUi>p {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CalculatorUI css */
+.calculatorUi {
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, 
+    rgba(87, 199, 133, 1) 50%, rgba(27, 169, 191, 0.98) 100%);
 }
