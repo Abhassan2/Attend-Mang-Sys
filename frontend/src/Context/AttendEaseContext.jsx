@@ -1,13 +1,15 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const AttendEaseContext = createContext();
 
 const AttendEaseContextProvider = ({children})=>{
     const [day, setDay] = useState(new Date().toLocaleString("en-US", {weekday: "short"}));
     const [openSidebar, setOpenSidebar] = useState(false)
+    const [activeTab, setActiveTab] = useState("");
 
     const object = {
-        setDay, day, openSidebar, setOpenSidebar,
+        setDay, day, openSidebar, setOpenSidebar, activeTab, setActiveTab,
+
     }
 
     return (

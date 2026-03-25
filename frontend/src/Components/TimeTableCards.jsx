@@ -1,5 +1,3 @@
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import TTData from "../../Data/TT.js";
 import { useContext, useEffect, useState } from "react";
 import { AttendEaseContext } from "../Context/AttendEaseContext.jsx";
@@ -7,7 +5,6 @@ import { AttendEaseContext } from "../Context/AttendEaseContext.jsx";
 export default function TimeTableCards({ selectedDay }) {
   const { object } = useContext(AttendEaseContext);
 
-  const [OpenArrowDownIcon, setOpenArrowDownIcon] = useState(null);
   const [timeTableData, setTimeTableData] = useState([]);
 
   useEffect(() => {
@@ -39,31 +36,8 @@ export default function TimeTableCards({ selectedDay }) {
                 <p className="light-text ">{data.room}</p>
               </div>
               <div className="flex justify-between">
-                <p className="text">Notes Content</p>
-                {OpenArrowDownIcon === index ? (
-                  <KeyboardArrowUpIcon
-                    onClick={() =>
-                      setOpenArrowDownIcon(
-                        OpenArrowDownIcon === index ? null : index,
-                      )
-                    }
-                  />
-                ) : (
-                  <KeyboardArrowDownIcon
-                    onClick={() =>
-                      setOpenArrowDownIcon(
-                        OpenArrowDownIcon === index ? null : index,
-                      )
-                    } 
-                  />
-                )}
+                <p className="text">Alert Message</p>
               </div>
-              {/* Notes Content */}
-              {OpenArrowDownIcon === index && (
-                <div className="transition-transform">
-                  <p>Notes Content</p>
-                </div>
-              )}
             </div>
           </div>
         ))

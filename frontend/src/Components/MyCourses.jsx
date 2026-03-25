@@ -20,6 +20,9 @@ export default function MyCourses() {
       <div>
         <Card />
         <Card />
+        <Card />
+        <Card />
+        <Card />
       </div>
     </>
   );
