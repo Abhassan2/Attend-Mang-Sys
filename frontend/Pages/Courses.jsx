@@ -1,3 +1,4 @@
+import '../src/Style/Courses.css';
 import { useContext } from "react";
 import AttendanceOverview from "../src/Components/AttendanceOverview";
 import MyCourses from "../src/Components/MyCourses";
