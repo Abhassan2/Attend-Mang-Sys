@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
+import { randomGenerateColor, calculateAttendancePercent } from '../helper.js';
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +25,10 @@ export default function App({studentData}) {
 
   const [subjectData, setSubjectData] = useState([]);
 
+  const percent = subjectData.map(s => {
+    return ((s.attendedClasses / s.totalClasses) * 100).toFixed(2);
+  });
+  
   const options = {
   responsive: true,
   plugins: {
@@ -76,23 +81,26 @@ export default function App({studentData}) {
   };
 
   const data = {
-  labels: subjectData ? subjectData.map(sub => sub.sbjCode) : [],
+  labels: subjectData ? subjectData.map(sub => sub.sbjName) : [],
 
   datasets: [
     {
-      data: [1,2,3,40,5,60,7],
+      data: percent,
       barThickness: 20,
       maxBarThickness: 20,
       minBarLength: 0,
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      backgroundColor: randomGenerateColor(subjectData.length),
     },
   ],
   
   };
 
-  useEffect(()=>{
-    setSubjectData(studentData.subjects);
-  },[studentData]);
+  useEffect(() => {
+    if (studentData?.subjects) {
+      setSubjectData(studentData.subjects);
+    }
+  }, [studentData]);
+
 
   if (!subjectData || subjectData.length === 0) {
     return <p>Loading...</p>;

@@ -6,6 +6,7 @@ import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import DoughnutSub from "./DoughnutSub.jsx";
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
+import { randomGenerateColor, calculateAttendancePercent } from "../helper.js";
 
 export default function App({ studentData }) {
   const data = {
@@ -13,18 +14,11 @@ export default function App({ studentData }) {
       {
         label: "%",
         data: [
-          Math.round(
-            (studentData.totalAttendedClasses / studentData.totalClasses) * 100,
-          ),
-          Math.round(
-            100 -
-              (studentData.totalAttendedClasses / studentData.totalClasses) *
-                100,
-          ),
+          calculateAttendancePercent(studentData.totalClasses, studentData.totalAttendedClasses),
+          100 - calculateAttendancePercent(studentData.totalClasses, studentData.totalAttendedClasses),
         ],
-        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-        borderWidth: 1,
+        backgroundColor: ["#F63049", "#6CA651"],
+        borderWidth: 3,
       },
     ],
   };

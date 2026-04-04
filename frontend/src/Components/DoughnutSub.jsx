@@ -5,26 +5,18 @@ import { Doughnut } from "react-chartjs-2";
 
 import ChartDataLabels from "chartjs-plugin-datalabels";
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
-
+import { randomGenerateColor, calculateAttendancePercent } from "../helper.js";
 
 export default function DoughnutSub({studentData}) {
+  const subjects = studentData?.subjects || [];
+  
   const data = {
     datasets: [
       {
         label: "%",
-        data: [
-          Math.round(
-            (studentData.totalAttendedClasses / studentData.totalClasses) * 100,
-          ),
-          Math.round(
-            100 -
-              (studentData.totalAttendedClasses / studentData.totalClasses) *
-                100,
-          ),
-        ],
-        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-        borderWidth: 1,
+        data: subjects.map(s => calculateAttendancePercent(s.totalClasses, s.attendedClasses)),
+        backgroundColor: randomGenerateColor(subjects.length),
+        borderWidth: 2,
       },
     ],
   };
