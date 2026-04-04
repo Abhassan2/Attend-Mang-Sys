@@ -12,7 +12,6 @@ import { AttendData } from '../Data/Attend.js';
 import { useEffect, useState } from "react";
 
 function App(){
-
   const [studentData, setStudentData] = useState([]);
   
   useEffect(()=>{

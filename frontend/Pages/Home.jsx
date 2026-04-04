@@ -1,3 +1,4 @@
+import '../src/Style/Home.css';
 import Navbar from "../src/Components/Navbar";
 import Sidebar from "../src/Components/Sidebar";
 import AttendanceOverview from '../src/Components/AttendanceOverview.jsx';

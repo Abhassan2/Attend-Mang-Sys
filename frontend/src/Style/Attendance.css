@@ -1,0 +1,90 @@
+/* Tablet devices (portrait and landscape) */
+@media (min-width: 700px) and (max-width: 1024px) {
+  
+  .container {
+    min-width: 100%; 
+    padding: 1rem;
+  }
+
+  .subContainer {
+    flex: 1;
+    border-radius: 0.75rem;
+    box-shadow: -1px -1px 3px rgba(0,0,0,0.15);
+  }
+
+  .overview-container {           
+    padding: 1rem 1rem 0.5rem;                 
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-container h2 {
+    font-size: 1.45rem;               
+    font-weight: 600;
+  }
+
+  .overview-container h1 {
+    font-size: 1.75rem;               
+  }
+
+  .overview-container #overallProgress {
+    width: 85%;                   
+    height: 0.75rem;               
+  }
+
+  .overview-container div {
+    height: 3.5rem;
+    width: 7rem;
+    top: 2.8rem;                  
+    right: 1rem;                   
+    font-size: 0.95rem;           
+    transform: rotate(20deg);     
+  }
+
+  .attend-insights {
+    margin-top: 0;
+  }
+
+  .attend-insights>div:first-child {
+    margin: 0.75rem 1rem 0.5rem;
+  }
+
+  .attend-insights div:first-child h1 {
+    font-size: 1.5rem; 
+  }
+
+  .attend-insights-nav {
+    gap: 1.25rem;
+  }
+
+  .attend-insights-nav a {
+    font-size: 1rem;
+  }
+
+  .attend-insights .nav-content {
+    flex: 1;
+    margin-inline: 1rem;
+    margin-block: 0.75rem;
+  }
+
+  .doughnut-container>div:first-child, .doughnutSub>div:first-child {
+    height: auto;
+    margin-inline: 0.5rem;
+  }
+
+  .doughnut-container canvas {
+    width: 30vw !important; 
+    height: 30vw !important;
+  }
+
+  .vBar-container {
+    margin-top: 0.5rem;
+    align-items: center;
+  }
+
+  .vBar-container canvas {
+    height: 50dvh !important;
+    width: 70vw !important;
+    max-width: 90%;
+  }
+}

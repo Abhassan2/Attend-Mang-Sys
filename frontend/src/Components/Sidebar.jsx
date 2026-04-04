@@ -1,3 +1,4 @@
+import '../Style/Sidebar.css';
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AttendEaseContext } from "../Context/AttendEaseContext";

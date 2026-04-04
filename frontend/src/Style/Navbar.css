@@ -1,0 +1,22 @@
+.navbar {
+    min-height: 4rem;
+    background-color: #0d6efd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 110;
+}
+
+.navbar .menu-icon {
+    font-size: 2rem;
+}
+
+.navbar .profile-icon {
+    font-size: 3rem;
+    background: transparent;
+}

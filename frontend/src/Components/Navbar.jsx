@@ -1,3 +1,4 @@
+import '../Style/Navbar.css';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';

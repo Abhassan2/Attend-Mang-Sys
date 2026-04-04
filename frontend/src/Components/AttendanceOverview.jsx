@@ -23,7 +23,7 @@ export default function AttendanceOverview({ overview }) {
           )
         }
         <progress id="overallProgress" value="40" min="0" max="100"></progress>
-        <div>Stay Consistent!</div>
+        <div>Stay<br/>Consistent!</div>
       </div>
   );
 }

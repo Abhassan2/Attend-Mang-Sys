@@ -1,0 +1,160 @@
+
+.home-main>div:last-child>div:last-child>div {
+  margin: 0 0 0.75rem;
+}
+
+/* Tablet devices (portrait + landscape) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .home-header {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+
+  .calculatorUi,
+  .CoursesOverviewUi {
+    width: 50%;
+  }
+
+  .home-main > div:last-child {
+    background-color: #eaefef;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 1rem;
+  }
+
+  .home-main > div:last-child > h1 {
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .home-main > div:last-child > h1 ~ a {
+    display: block;
+    color: rgba(10, 119, 244, 0.886);
+  }
+
+  .home-main > div:last-child > div:last-child {
+    padding: 0 1rem;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .home-main > div:last-child > div:last-child > .card {
+    margin-bottom: 0;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    padding: 0.75rem;
+  }
+}
+
+/* Laptop devices */
+@media (min-width: 1025px) and (max-width: 1513px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .home-header {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+
+  .calculatorUi,
+  .CoursesOverviewUi {
+    width: 50%;
+  }
+
+  .home-main > div:last-child {
+    border-radius: 1rem;
+    background-color: #eaefef;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 1.5rem;
+  }
+
+  .home-main > div:last-child > h1 {
+    padding: 1rem;
+    font-size: 1.75rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .home-main > div:last-child > h1 ~ a {
+    display: none;
+  }
+
+  .home-main > div:last-child > div:last-child {
+    padding: 0 1.5rem;
+    margin-top: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .home-main > div:last-child > div:last-child > .card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .home-main > div:last-child > div:last-child > .card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Desktop devices (large monitors) */
+@media (min-width: 1513px) {
+
+  .home-header {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+
+  .calculatorUi,
+  .CoursesOverviewUi {
+    width: 50%;
+  }
+
+  .home-main > div:last-child {
+    border-radius: 1rem;
+    background-color: #EAEFEF;
+    border: 2px solid rgba(0,0,0,0.1);
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;                
+  }
+
+  .home-main > div:last-child > h1 {
+    padding: 1.25rem;
+    font-size: 2rem;              
+    box-shadow: 0px 5px 8px rgba(0,0,0,0.1);
+  }
+
+  .home-main > div:last-child > h1 ~ a {
+    display: none;
+  }
+
+  .home-main > div:last-child > div:last-child {
+    padding: 0 2rem;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;                  
+  }
+
+  .home-main > div:last-child > div:last-child > .card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    padding: 1.25rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .home-main > div:last-child > div:last-child > .card:hover {
+    transform: translateY(-6px);   
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+}

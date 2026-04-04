@@ -1,0 +1,106 @@
+/* Tablet styles (portrait + landscape) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .timetable-container {
+    background-color: #F5F5F5;
+    min-height: 100vh;
+  }
+
+  .timetable-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 0;
+    padding: 0.5rem 1rem 0.25rem;
+    margin-bottom: 1rem;
+    background-color: #007FFF;
+    color: #fff;
+    font-size: 1.25rem; 
+    font-weight: 600;
+  }
+
+  .timetable-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 1rem;
+  }
+
+  /* Navigation bar */
+  .weekly-calendar .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .weekly-calendar .nav h4 {
+    font-size: 1.25rem; /* slightly larger for tablets */
+    font-weight: 600;
+  }
+
+  /* Horizontal days row */
+  .weekly-calendar .days-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .weekly-calendar .days-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .weekly-calendar .day-card {
+    min-width: 60px; 
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .weekly-calendar .day-card.selected {
+    background-color: #2563eb;
+    padding: .25rem;
+    transform: scale(1.1);
+    /* border-radius: .75rem;
+    box-shadow: inset 0 2px 6px rgba(30, 58, 138, 0.7); */
+  }
+
+  .weekly-calendar .day-card p {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .weekly-calendar .day-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .timeTableCard {
+    /* margin: 1rem; */
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .timeTableCard .time-info {
+    font-size: 16px;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+  }
+
+  .timeTableCard .details {
+    flex: 1;
+    padding: 1rem;
+    font-size: 15px;
+  }
+
+  .timeTableCard h1 {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeTableCard p {
+    margin: 0.25rem 0;
+  }
+
+}
