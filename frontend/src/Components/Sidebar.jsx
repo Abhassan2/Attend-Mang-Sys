@@ -10,7 +10,7 @@ export default function Sidebar() {
     object.setOpenSidebar(false);
     object.setActiveTab(e.target.firstChild.data)
   }
-  // console.log(object.activeTab);
+
   return (
     <>
       {object.openSidebar && (
