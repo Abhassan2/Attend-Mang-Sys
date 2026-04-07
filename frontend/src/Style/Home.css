@@ -30,7 +30,7 @@
 
   .home-main > div:last-child > h1 ~ a {
     display: block;
-    color: rgba(10, 119, 244, 0.886);
+    color: #28283c;
   }
 
   .home-main > div:last-child > div:last-child {

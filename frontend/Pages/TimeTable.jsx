@@ -12,7 +12,7 @@ export default function TimeTable() {
   } 
 
   return (
-    <div className='bg-[#F5F5F5] h-full timetable-container'>
+    <div className='bg-[#F5F5F5] timetable-container'>
       <div className='timetable-header flex flex-col sticky top-0 z-10 justify-around mb-3 p-3 gap-3 bg-[#007FFF] text-white text-xl font-semibold '>
         <TTHeader title={"Weekly Time-Table"} />
         <WeeklyCalendar getDay={getDay} />

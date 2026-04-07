@@ -14,11 +14,13 @@ export default function MainHeader() {
   
   return (
       <div className="navbar">
-        {
-          object.openSidebar 
-          ? <CloseRoundedIcon className='menu-icon' onClick={handleSidebar} />
-          : <MenuRoundedIcon className='menu-icon' onClick={handleSidebar} />
-        }
+        <div>
+          {
+            object.openSidebar 
+            ? <CloseRoundedIcon className='menu-icon' onClick={handleSidebar} />
+            : <MenuRoundedIcon className='menu-icon' onClick={handleSidebar} />
+          }
+        </div>
         <AccountCircleRoundedIcon className='profile-icon' />
       </div>
   )

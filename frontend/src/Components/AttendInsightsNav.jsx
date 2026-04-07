@@ -10,18 +10,6 @@ export default function AttendInsightsNav({ selectedNav, setSelectedNav }) {
       <NavLink to="subjects" className="active-text">
         Subjects
       </NavLink>
-      {/* <nav
-        className={`secondary-text ${selectedNav === "Overall" ? "activeNav" : ""}`}
-        onClick={(e) => setSelectedNav(e.target.innerText)}
-      >
-        Overall
-      </nav>
-      <nav
-        className={`secondary-text ${selectedNav === "Subject" ? "activeNav" : ""}`}
-        onClick={(e) => setSelectedNav(e.target.innerText)}
-      >
-        Subject
-      </nav> */}
     </div>
   );
 }

@@ -21,19 +21,21 @@ function App(){
   return(
     <div>
       <Navbar />
-      <div className='dashboard'>
+      <div className='flex flex-row'>
         <Sidebar />
-        <Routes>
-          <Route path="/" element={<Navigate to="home" />} />
-          <Route path='/home' element={<Home/>} />
-          <Route path='/attendance' element={<Attendance />} >
-            <Route index element={<Navigate to="overall" />} />
-            <Route path='overall' element={<OverallAttend studentData={studentData} />} />
-            <Route path='subjects' element={<Subjects studentData={studentData} />} />
-          </Route>
-          <Route path='/time-table' element={<TimeTable />} />
-          <Route path='/courses' element={<Courses />} />
-        </Routes>
+        <div className='flex-1'>
+          <Routes>
+            <Route path="/" element={<Navigate to="home" />} />
+            <Route path='/home' element={<Home/>} />
+            <Route path='/attendance' element={<Attendance />} >
+              <Route index element={<Navigate to="overall" />} />
+              <Route path='overall' element={<OverallAttend studentData={studentData} />} />
+              <Route path='subjects' element={<Subjects studentData={studentData} />} />
+            </Route>
+            <Route path='/time-table' element={<TimeTable />} />
+            <Route path='/courses' element={<Courses />} />
+          </Routes>
+        </div>
       </div>
     </div>
   )

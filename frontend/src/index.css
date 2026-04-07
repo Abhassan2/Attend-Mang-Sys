@@ -10,20 +10,6 @@
     font-size: 18px;
 }
 
-.dashboard {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-}
-
-.dashboard>.sidebar {
-    min-width: 13rem;
-}
-
-.dashboard>div:last-child {
-    flex: 1;
-}
-
 .secondary-text {
     color: #28283C;
     font-weight: 400;

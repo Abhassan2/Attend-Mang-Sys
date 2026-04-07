@@ -19,7 +19,7 @@ export default function WeekCalendar({ getDay }) {
   }, [selectedDay]);
 
   return (
-    <div className="weekly-calendar p-1">
+    <div className="weekly-calendar">
       {/* Navigation */}
       <div className="nav flex justify-between mb-1">
         <ArrowBackIosRoundedIcon
