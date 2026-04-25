@@ -68,7 +68,8 @@ const AttendEaseContextProvider = ({ children }) => {
     }
   };
   
-  const getTimetable = async (day) => {
+  const getLectures = async (day) => {
+    // setLoading(true);
     try {
       const response = await axios.get(BACKEND_URL + `/api/lectures/day/${day}`,
         {
@@ -76,10 +77,11 @@ const AttendEaseContextProvider = ({ children }) => {
             Authorization: `Bearer ${token}`
           }
         }
-      );
-
+      );     
+      
       if (response.data.success) {
         setTimeTableData(response.data.lectures);
+        setLoading(false);
       } else {
         toast.error(response.data.message);
       }
@@ -90,6 +92,7 @@ const AttendEaseContextProvider = ({ children }) => {
   };
 
   const getSubjects = async (query) => {
+    setLoading(true);
     try {
       const response = await axios.get(BACKEND_URL + `/api/subjects?query=${query}`,
         {
@@ -101,6 +104,7 @@ const AttendEaseContextProvider = ({ children }) => {
 
       if (response.data.success) {
         setSubjects(response.data.subjects);
+        setLoading(false);
       } else{
         toast.error(response.data.message);
       }
@@ -111,6 +115,7 @@ const AttendEaseContextProvider = ({ children }) => {
   };
 
   const getAttendance = async () => { 
+    setLoading(true);
     try {
       const response = await axios.get(
         BACKEND_URL + `/api/attendance/${id}`,
@@ -123,6 +128,7 @@ const AttendEaseContextProvider = ({ children }) => {
       
       if (response.data.success) {
         setAttendance(response.data.attendance);
+        setLoading(false);
       } else{
         toast.error(response.data.message);
       }
@@ -143,11 +149,12 @@ const AttendEaseContextProvider = ({ children }) => {
     localStorage.setItem("id", id);
   }, [token, id]);
 
+
+  
   useEffect(() => {
     if (
       location.pathname === "/home" ||
-      location.pathname === "/attendance/overall" ||
-      location.pathname === "/attendance/subjects"
+      location.pathname === "/attendance/overall" 
     ) {
       getAttendance();
     }
@@ -172,7 +179,7 @@ const AttendEaseContextProvider = ({ children }) => {
     activeTab,
     setActiveTab,
     timeTableData,
-    getTimetable,
+    getLectures,
     subjects,
     getSubjects,
     attendance,

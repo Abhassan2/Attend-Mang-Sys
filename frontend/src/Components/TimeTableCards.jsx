@@ -6,7 +6,7 @@ export default function TimeTableCards() {
   const { object } = useContext(AttendEaseContext);
   
   useEffect(() => {
-    object.getTimetable(object.day);
+    object.getLectures(object.day);
   }, [object.day]);
 
   return (

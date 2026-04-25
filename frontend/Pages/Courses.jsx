@@ -4,6 +4,7 @@ import AttendanceOverview from "../src/Components/AttendanceOverview";
 import MyCourses from "../src/Components/MyCourses";
 import { AttendEaseContext } from "../src/Context/AttendEaseContext";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+import { HashLoader } from "react-spinners";
 
 export default function Courses() {
   const { object } = useContext(AttendEaseContext);
@@ -11,9 +12,9 @@ export default function Courses() {
   const [isActive, setIsActive] = useState(true);
 
   useEffect(() => {
-    if(isActive){
+    if (isActive) {
       object.getSubjects("active");
-    }else{
+    } else {
       object.getSubjects("readoff");
     }
   }, [isActive]);
@@ -49,8 +50,13 @@ export default function Courses() {
             Read Off
           </h1>
         </div>
-          <div className="card-container">
-            {object.subjects?.map((subject, index) => (
+        <div className="card-container">
+          {object.loading ? (
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "12rem" }}>
+              <HashLoader color="#36d7b7" size={40} />
+            </div>
+          ) : (
+            object.subjects?.map((subject, index) => (
               <div key={index} className="card">
                 <div>
                   <div>{subject.subjectName.split(" ").map((el) => el[0])}</div>
@@ -87,8 +93,9 @@ export default function Courses() {
                   )}
                 </div>
               </div>
-            ))}
-          </div>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AttendEaseContext } from '../src/Context/AttendEaseContext.jsx';
+import { HashLoader } from "react-spinners";
 
 export default function TimeTable() {
   const {object} = useContext(AttendEaseContext);
@@ -16,7 +17,12 @@ export default function TimeTable() {
         <TTHeader title={"Weekly Time-Table"} />
         <WeeklyCalendar />
       </div>
-      <TimeTableCards className='timetable-cards' />
+      {object.loading ? (
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "12rem" }}>
+              <HashLoader color="#36d7b7" size={40} />
+            </div>
+          ) : (<TimeTableCards className='timetable-cards' />)}
+      {/* <TimeTableCards className='timetable-cards' /> */}
     </div>
   )
 }

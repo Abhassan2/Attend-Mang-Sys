@@ -1,3 +1,33 @@
+.container {
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    height: calc(100dvh - 4rem);
+    padding: 0.5rem;
+    background-color: #F5F5F5;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: hidden;
+}
+
+/* AttendInsights css */
+.attend-insights {
+    background-color: #EAEFEF;
+    padding-bottom: 0.125rem; 
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+.attend-insights>div:first-child {
+    margin: 0.5rem 0.75rem 0.25rem;
+}
+
+.attend-insights div:first-child h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
 /* Tablet devices (portrait and landscape) */
 @media (min-width: 700px) and (max-width: 1024px) {
   

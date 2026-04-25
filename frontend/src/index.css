@@ -53,10 +53,6 @@
     display: none;
 }
 
-.container::-webkit-scrollbar {
-    display: none;
-}
-
 .subContainer {
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: -2px -2px 2px rgba(0,0,0,0.1);
@@ -149,24 +145,6 @@
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 0.5rem;
     transform: rotate(30deg);
-}
-
-/* Attendence page css */
-/* AttendInsights css */
-.attend-insights {
-    background-color: #EAEFEF;
-    padding-bottom: 0.125rem; 
-    border-radius: 1rem;
-    margin-top: 0.5rem;
-}
-
-.attend-insights>div:first-child {
-    margin: 0.5rem 0.75rem 0.25rem;
-}
-
-.attend-insights div:first-child h1 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
 }
 
 /* attendIinsightsNav css */
