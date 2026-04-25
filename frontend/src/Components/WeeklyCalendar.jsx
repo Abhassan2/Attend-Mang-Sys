@@ -4,7 +4,7 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
 import { AttendEaseContext } from "../Context/AttendEaseContext";
 
-export default function WeekCalendar({ getDay }) {
+export default function WeekCalendar() {
   const { object } = useContext(AttendEaseContext);
 
   const [currentWeek, setCurrentWeek] = useState(dayjs());
@@ -15,7 +15,7 @@ export default function WeekCalendar({ getDay }) {
   const days = Array.from({ length: 30 }).map((_, i) => startDay.add(i, "day"));
 
   useEffect(() => {
-    object.setDay(selectedDay.$d.toLocaleString("en-US", { weekday: "short" }));
+    object.setDay(selectedDay.$d.toLocaleString("en-US", { weekday: "long" }));
   }, [selectedDay]);
 
   return (

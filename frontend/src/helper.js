@@ -1,28 +1,32 @@
 // randomGenerateColor
-export const  randomGenerateColor = (length) => {
+export const randomGenerateColor = (length) => {
   const colors = [];
 
   for (let i = 0; i < length; i++) {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+    const r = Math.floor(Math.random() * 156) + 100;
+    const g = Math.floor(Math.random() * 156) + 100;
+    const b = Math.floor(Math.random() * 156) + 100;
+    const a = (Math.random() * 0.5 + 0.5).toFixed(2);
 
-    const color = `#${r.toString(16).padStart(2, '0')}${g
-      .toString(16)
-      .padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-
+    const color = `rgba(${r}, ${g}, ${b}, ${a})`;
     colors.push(color);
   }
 
   return colors;
-}
+};
 
-// calculateAttendancePercent
-export const calculateAttendancePercent = (totalClasses, totalAttendedClasses) => {
-  if (totalClasses === 0) {
+
+// calculateOverallPercent
+export const calculateOverallPercent = (attendance) => {
+  if (attendance.length === 0 || !Array.isArray(attendance)) {
     return 0; 
   }
+
+  let overall = 0;
+  for(const i of attendance){
+    overall += i.percentage;
+  }
   
-  return  Math.round((totalAttendedClasses / totalClasses) * 100);
+  return  Math.round(overall/attendance.length);
 }
 

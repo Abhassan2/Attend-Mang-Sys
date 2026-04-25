@@ -5,18 +5,20 @@ import { Doughnut } from "react-chartjs-2";
 
 import ChartDataLabels from "chartjs-plugin-datalabels";
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
-import { randomGenerateColor, calculateAttendancePercent } from "../helper.js";
+import { randomGenerateColor, calculateOverallPercent } from "../helper.js";
+import { useContext } from "react";
+import { AttendEaseContext } from "../Context/AttendEaseContext.jsx";
 
-export default function DoughnutSub({studentData}) {
-  const subjects = studentData?.subjects || [];
+export default function DoughnutSub() {
+  const {object} = useContext(AttendEaseContext);
   
   const data = {
     datasets: [
       {
         label: "%",
-        data: subjects.map(s => calculateAttendancePercent(s.totalClasses, s.attendedClasses)),
-        backgroundColor: randomGenerateColor(subjects.length),
-        borderWidth: 2,
+        data: object.attendance.map(subject => Math.round(subject.percentage)),
+        backgroundColor: randomGenerateColor(object.attendance.length),
+        borderWidth: 1,
       },
     ],
   };
@@ -49,11 +51,11 @@ export default function DoughnutSub({studentData}) {
       <div>
         <p>
           <CheckCircleRoundedIcon style={{ color: "green" }} />{" "}
-          <strong>88%</strong> Present
+          <strong>{calculateOverallPercent(object.attendance)}</strong> Present
         </p>
         <br />
         <p>
-          <CancelRoundedIcon style={{ color: "red" }} /> <strong>12%</strong>{" "}
+          <CancelRoundedIcon style={{ color: "red" }} /> <strong>{100 - calculateOverallPercent(object.attendance)}</strong>{" "}
           Absent
         </p>
       </div>

@@ -22,7 +22,7 @@ export default function AttendanceOverview({ overview }) {
             </p>
           )
         }
-        <progress id="overallProgress" value="40" min="0" max="100"></progress>
+        <progress id="overallProgress" value={overview.totalPercent} min="0" max="100"></progress>
         <div>Stay<br/>Consistent!</div>
       </div>
   );

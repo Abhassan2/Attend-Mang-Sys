@@ -1,5 +1,5 @@
 import './index.css'
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import TimeTable from '../Pages/TimeTable.jsx';
 import Attendance from '../Pages/Attendance.jsx';
 import Courses from '../Pages/Courses.jsx';
@@ -10,31 +10,39 @@ import OverallAttend from './Components/OverallAttend.jsx';
 import Subjects from './Components/Subjects.jsx';
 import { AttendData } from '../Data/Attend.js';
 import { useEffect, useState } from "react";
+import LoginRegister from './Components/LoginRegister.jsx';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App(){
-  const [studentData, setStudentData] = useState([]);
-  
-  useEffect(()=>{
-    setStudentData(AttendData.student);
-  },[studentData]);
+  const location = useLocation();
+  const hideLayout = location.pathname === "/login";
 
   return(
     <div>
-      <Navbar />
+      {!hideLayout && <Navbar />}
       <div className='flex flex-row'>
-        <Sidebar />
+        {!hideLayout && <Sidebar />}
         <div className='flex-1'>
           <Routes>
-            <Route path="/" element={<Navigate to="home" />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path='/login' element={<LoginRegister />} />
+
             <Route path='/home' element={<Home/>} />
             <Route path='/attendance' element={<Attendance />} >
               <Route index element={<Navigate to="overall" />} />
-              <Route path='overall' element={<OverallAttend studentData={studentData} />} />
-              <Route path='subjects' element={<Subjects studentData={studentData} />} />
+              <Route path='overall' element={<OverallAttend />} />
+              <Route path='subjects' element={<Subjects />} />
             </Route>
-            <Route path='/time-table' element={<TimeTable />} />
-            <Route path='/courses' element={<Courses />} />
+
+            <Route path='/lectures' element={<TimeTable />} />
+            <Route path='/subjects' element={<Courses />} />
+            
           </Routes>
+          <ToastContainer 
+            position="top-center" 
+            autoClose={3000} 
+          />
         </div>
       </div>
     </div>

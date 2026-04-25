@@ -247,62 +247,6 @@
     margin-bottom: 0.5rem;
 }
 
-/* Course css */
-/* card container */
-
-
-/* Card css */
-.card, .dropDown {
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0.5rem;
-    background-color: #F5F5F5;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: -2px -2px 2px rgba(0,0,0,0.1);
-    box-shadow: 4px 4px 2px rgba(0,0,0,0.1);
-}
-
-.card>div:first-child {
-    display: flex;
-    padding: 0.5rem;
-    gap: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-
-}
-
-.card>div:first-child>div:first-child {
-    min-width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    background: linear-gradient(135deg, #6EE7B7, #3B82F6);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.card>div:nth-child(2) {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-}
-
-.dropDown {
-    box-shadow: none;
-    border: 2px solid rgba(0,0,0,0.1);
-}
-
-.dropDown p {
-    border-bottom: 2px solid rgba(0,0,0,0.1);
-    border-radius: 4px;
-    padding-inline: 0.5rem;
-}
-
 /* CoursesOverviewUi css */
 .CoursesOverviewUi {
     background: linear-gradient(90deg,rgba(2, 0, 36, 0.93) 0%, 

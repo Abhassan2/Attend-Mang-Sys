@@ -6,16 +6,20 @@ import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import DoughnutSub from "./DoughnutSub.jsx";
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
-import { randomGenerateColor, calculateAttendancePercent } from "../helper.js";
+import { randomGenerateColor, calculateOverallPercent } from "../helper.js";
+import { useContext } from "react";
+import { AttendEaseContext } from "../Context/AttendEaseContext.jsx";
 
-export default function App({ studentData }) {
+export default function App() {
+  const {object} = useContext(AttendEaseContext);
+  
   const data = {
     datasets: [
       {
         label: "%",
         data: [
-          calculateAttendancePercent(studentData.totalClasses, studentData.totalAttendedClasses),
-          100 - calculateAttendancePercent(studentData.totalClasses, studentData.totalAttendedClasses),
+          calculateOverallPercent(object.attendance),
+          100 - calculateOverallPercent(object.attendance),
         ],
         backgroundColor: ["#F63049", "#6CA651"],
         borderWidth: 3,
@@ -53,17 +57,17 @@ export default function App({ studentData }) {
         <div>
           <p>
             <CheckCircleRoundedIcon style={{ color: "green" }} />
-            <strong>88%</strong> Present
+            <strong>{calculateOverallPercent(object.attendance)}</strong> Present
           </p>
           <br />
           <p>
             <CancelRoundedIcon style={{ color: "red" }} /> 
-            <strong>12%</strong> Absent
+            <strong>{100 - calculateOverallPercent(object.attendance)}</strong> Absent
           </p>
         </div>
       </div>
       <div className="doughnutSub">
-        <DoughnutSub studentData={studentData} />
+        <DoughnutSub />
       </div>
     </div>
   );

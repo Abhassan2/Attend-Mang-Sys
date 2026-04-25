@@ -10,7 +10,9 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
-import { randomGenerateColor, calculateAttendancePercent } from '../helper.js';
+import { randomGenerateColor, calculateOverallPercent } from '../helper.js';
+import { useContext } from 'react';
+import { AttendEaseContext } from '../Context/AttendEaseContext.jsx';
 
 ChartJS.register(
   CategoryScale,
@@ -21,14 +23,9 @@ ChartJS.register(
   Legend
 );
 
-export default function App({studentData}) {
+export default function App() {
+  const {object} = useContext(AttendEaseContext);
 
-  const [subjectData, setSubjectData] = useState([]);
-
-  const percent = subjectData.map(s => {
-    return ((s.attendedClasses / s.totalClasses) * 100).toFixed(2);
-  });
-  
   const options = {
   responsive: true,
   plugins: {
@@ -81,28 +78,21 @@ export default function App({studentData}) {
   };
 
   const data = {
-  labels: subjectData ? subjectData.map(sub => sub.sbjName) : [],
+  labels: object.attendance.map(subject => subject.subjectId.subjectName.split(" ").map(elm => elm[0])),
 
   datasets: [
     {
-      data: percent,
+      data: object.attendance.map(subject => Math.round(subject.percentage)),
       barThickness: 20,
       maxBarThickness: 20,
       minBarLength: 0,
-      backgroundColor: randomGenerateColor(subjectData.length),
+      backgroundColor: randomGenerateColor(object.attendance.length),
     },
   ],
   
   };
 
-  useEffect(() => {
-    if (studentData?.subjects) {
-      setSubjectData(studentData.subjects);
-    }
-  }, [studentData]);
-
-
-  if (!subjectData || subjectData.length === 0) {
+  if (!object.attendance || object.attendance.length === 0) {
     return <p>Loading...</p>;
   }
 

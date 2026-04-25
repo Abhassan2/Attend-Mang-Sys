@@ -3,17 +3,18 @@ import DropDown from "./DropDown";
 import { AttendEaseContext } from "../Context/AttendEaseContext";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
-export default function Card() {
+export default function Card({subjectName, subjectCode}) {
   const { object } = useContext(AttendEaseContext);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="card-container">
+    <div className="card-container" >
       <div className="card">
         <div>
-          <div>ACA</div>
+          <div>{subjectName.split(" ").map(el => el[0])}</div>
           <div>
-            <h1 className="primary-text">Advanced Computer Architecture</h1>
+            <h1 className="primary-text">{subjectName}</h1>
+            <p>{subjectCode}</p>
           </div>
         </div>
         <div onClick={() => setIsOpen(!isOpen)}>
