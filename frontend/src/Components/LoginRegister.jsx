@@ -43,6 +43,9 @@ function LoginRegister() {
           {isLogin && <h1>Login</h1>}
           {!isLogin && <h1>Register</h1>}
         </div>
+        <div>
+          <p>email: abid@example.com and password: 12345678</p>
+        </div>
         {/* Form */}
         <div className="form-container">
           <form onSubmit={handleSubmit}>
